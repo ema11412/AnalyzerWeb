@@ -1,5 +1,6 @@
 # Build React App
 FROM node:13.12.0-alpine as build
+EXPOSE 3000
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
@@ -7,4 +8,4 @@ COPY package-lock.json ./
 RUN npm ci --silent
 RUN npm install react-scripts -g --silent
 COPY . ./
-RUN npm run build
+CMD ["npm", "start"]
