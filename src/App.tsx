@@ -40,6 +40,15 @@ const App = () => {
   };
   mgr = new UserManager(config);
 
+  mgr.getUser().then(function (user) {
+    if (user) {
+      log("User logged in" + user.profile);
+    }
+    else {
+      log("User not logged in");
+    }
+  });
+
   const checkToken = async () => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {
@@ -66,10 +75,10 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          {/* <Route path="/" exact>
+          {<Route path="/" exact>
             <LogInScreen setToken={setToken} />
-          </Route> */}
-          <Route path="/">
+          </Route>}
+          <Route path="/Home">
             <Header />
             {/*<HeaderBar setToken={setToken} />*/}
             <HomeScreen />
