@@ -8,3 +8,4 @@ RUN npm ci --silent
 RUN npm install react-scripts -g --silent
 COPY . ./
 RUN npm run build
+CMD ["npm", "start"]
