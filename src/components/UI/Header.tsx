@@ -12,6 +12,8 @@ import {makeStyles, withStyles} from "@material-ui/core/styles";
 import {useState} from "react";
 import logo from "../../assets/da-logo.svg";
 import styled from "styled-components";
+import {mgr} from "../../App";
+import {log} from "util";
 
 const useStyles = makeStyles({
     navbarDisplayFlex: {
@@ -81,11 +83,11 @@ const Header = (props: any) => {
     const [currentPage, setCurrentPage] = useState("home");
 
     function signOut() {
-        localStorage.removeItem("token");
-        setCurrentPage("/");
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
+        mgr.signoutRedirect();
+    }
+
+    function signIn() {
+        mgr.signinRedirect();
     }
 
     return (
@@ -111,6 +113,11 @@ const Header = (props: any) => {
                         <a key={"Sign Out"} className={classes.linkText} onClick={() => signOut()}>
                             <SignOutListItem button>
                                 <ListItemText primary="Sign Out" />
+                            </SignOutListItem>
+                        </a>
+                        <a key={"Sign In"} className={classes.linkText} onClick={() => signIn()}>
+                            <SignOutListItem button>
+                                <ListItemText primary="Sign In" />
                             </SignOutListItem>
                         </a>
                     </List>

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import fileIcon from "../../assets/file-icon.svg";
 import userIcon from "../../assets/user-icon.svg";
 import logo from "../../assets/da-logo.svg";
+import {mgr} from "../../App";
+import {log} from "util";
 
 const Div = styled.nav`
   background: linear-gradient(

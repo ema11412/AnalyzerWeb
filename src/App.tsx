@@ -13,10 +13,32 @@ import UserNamesScreen from "./components/UserNamesScreen";
 import axios from "axios";
 import { BaseURL } from "./constants";
 import Header from "./components/UI/Header";
+import {UserManager} from "oidc-client";
+import {log} from "util";
+
+export let mgr:UserManager;
 
 const App = () => {
   const [token, setToken]: any = useState();
   const history = useHistory();
+
+  // @source https://identityserver4.readthedocs.io/en/latest/quickstarts/4_javascript_client.html
+  let config = {
+    authority: "http://identity-server:5000",
+    client_id: "mvc",
+    client_secret: "secret",
+    redirect_uri: "http://localhost:3000/index.html",
+    response_type: "code",
+    scope: "api1",
+    post_logout_redirect_uri: "http://localhost:3000/index.html",
+    metadata: {
+      authorization_endpoint : "http://localhost:5000/connect/authorize",
+      end_session_endpoint: "http://localhost:5000/connect/endsession",
+      userinfo_endpoint: "http://localhost:5000/connect/userinfo",
+      jwks_uri: "http://localhost:5000/.well-known/openid-configuration/jwks",
+    }
+  };
+  mgr = new UserManager(config);
 
   const checkToken = async () => {
     const savedToken = localStorage.getItem("token");
@@ -30,6 +52,8 @@ const App = () => {
         setToken(savedToken);
         return;
       }
+    }
+    else {
     }
     history.push("/");
   };
@@ -64,5 +88,7 @@ const App = () => {
 
 
 // token={token}
+
+
 
 export default App;
