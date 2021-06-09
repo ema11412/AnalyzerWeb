@@ -10,13 +10,15 @@ import schlafenhaseLogo from "../assets/schlafenhase-blue-transparent.png";
 import gitHubIcon from "../assets/github-icon.svg";
 import Swal from "sweetalert2";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import {mgr} from "../App"
+
 
 const Div = styled.div`
   overflow: hidden;
   height: 100%;
   display: flex;
   background-size: contain;
-  background: linear-gradient(308deg, #48869f, #61b59e, #48879f, #43c19e);
+  background: linear-gradient(308deg, #DE0DAF, #0DDEDB, #460DDE , #0DDE4D);
   background-size: 800% 800%;
 
   -webkit-animation: AnimatedGradientBackground 8s ease infinite;
@@ -58,7 +60,7 @@ const Container = styled.div`
   flex-direction: column;
 
   h1 {
-    color: #1c448e;
+    color: #460DDE;
   }
 
   input {
@@ -95,7 +97,7 @@ const BottomLabel = styled.div`
 `;
 
 const HBar = styled.div`
-  background-color: #f61067;
+  background-color: #460DDE;
   width: 100%;
   height: 10px;
   margin-top: 20px;
@@ -183,28 +185,23 @@ const LogInScreen = (props: any) => {
     }
   };
 
+  function signIn() {
+    mgr.signinRedirect();
+  }
+
   return (
     <Div>
       <Container>
         <Logo src={logo}/>
         <h2>upload -{">"} analyze -{">"} check.</h2>
-        <InputLabel>Welcome back! Sign in here:</InputLabel>
-        <StyledTextField id="input-email" type="text" label="Email" variant="outlined" size="small" onChange={(e) => nameState[1](e.target.value)}/>
-        <StyledTextField id="input-password" type="password" label="Password" variant="outlined" size="small" onChange={(e) => passwordState[1](e.target.value)} onKeyPress={handleKeyEvent} />
-        {/*<Entry label="Username/Email" state={nameState} />*/}
-        {/*<Entry type="password" label="Password" state={passwordState} />*/}
-        <CustomButton variant="contained" color="primary" onClick={login} style={{height: 50}} startIcon={<ArrowForwardIcon />}>
+        
+        
+        <CustomButton variant="contained" color="primary" onClick={() => signIn()} style={{height: 50}} startIcon={<ArrowForwardIcon />}>
           Sign In
         </CustomButton>
         <HBar/>
-        <SchlafenhaseLogo src={schlafenhaseLogo}/>
-        <BottomLabel>2021. Schlafenhase <span className="blue">[BLUE]</span></BottomLabel>
-        <BottomLabel>
-          Source Code:
-          <a href="https://github.com/Schlafenhase/Document-Analyzer">
-            <img src={gitHubIcon}/>
-          </a>
-        </BottomLabel>
+        {/* <SchlafenhaseLogo src={schlafenhaseLogo}/> */}
+
       </Container>
     </Div>
   );

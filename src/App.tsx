@@ -78,7 +78,7 @@ const App = () => {
           {<Route path="/" exact>
             <LogInScreen setToken={setToken} />
           </Route>}
-          <Route path="/Home">
+          <Route path="/home">
             <Header />
             {/*<HeaderBar setToken={setToken} />*/}
             <HomeScreen />

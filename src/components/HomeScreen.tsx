@@ -18,23 +18,23 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 import {makeStyles, withStyles} from "@material-ui/core/styles";
 import {DataGrid, GridColumns} from "@material-ui/data-grid";
 
-// const DATA = [
-//   {
-//     "Nombre del archivo": "Doc1",
-//     "Fecha de subida": "12/10/2020",
-//     "Progreso de subida": "Listo",
-//   },
-//   {
-//     "Nombre del archivo": "Doc1.1",
-//     "Fecha de subida": "30/10/2020",
-//     "Progreso de subida": "Listo",
-//   },
-//   {
-//     "Nombre del archivo": "Minuta",
-//     "Fecha de subida": "12/3/2021",
-//     "Progreso de subida": 50,
-//   },
-// ];
+const DATA = [
+  {
+    "Nombre del archivo": "Doc1",
+    "Fecha de subida": "12/10/2020",
+    "Progreso de subida": "Listo",
+  },
+  {
+    "Nombre del archivo": "Doc1.1",
+    "Fecha de subida": "30/10/2020",
+    "Progreso de subida": "Listo",
+  },
+  {
+    "Nombre del archivo": "Minuta",
+    "Fecha de subida": "12/3/2021",
+    "Progreso de subida": 50,
+  },
+];
 
 const Div = styled.div`
   box-sizing: border-box;
