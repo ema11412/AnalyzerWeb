@@ -11,7 +11,7 @@ RUN npm run build
 
 # Add to NGINX
 FROM nginx:stable-alpine
-EXPOSE 3000
+EXPOSE 3000 3001 3002
 COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
