@@ -34,9 +34,9 @@ const Title = styled.h1`
 
 const CustomButton = withStyles((theme) => ({
   root: {
-    border: "2px solid #ffca0a",
+    border: "2px solid #fff",
     marginLeft: "20px",
-    background: 'linear-gradient(45deg, #184f81 30%, #5490bd 90%)',
+    background: 'linear-gradient(45deg, #ff4c71 30%, #fDDEfd 90%)',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
   label: {
@@ -56,7 +56,7 @@ const StyledTextField = withStyles((theme) => ({
       color: 'white',
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: "#f61067",
+      borderBottomColor: "#ff4c71",
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -66,7 +66,7 @@ const StyledTextField = withStyles((theme) => ({
         borderColor: 'white',
       },
       '&.Mui-focused fieldset': {
-        borderColor: "#f61067",
+        borderColor: "#ff4c71",
       },
     },
     '& .MuiInputBase-root': {
@@ -79,7 +79,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: "300px",
     maxWidth: "750px",
-    backgroundColor: "#497A9F",
+    backgroundColor: "#184f81",
     boxShadow: '0 3px 5px 3px rgba(255, 255, 255, 0.3)',
   }
 });

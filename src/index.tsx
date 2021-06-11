@@ -12,7 +12,7 @@ const theme = createMuiTheme({
             main: "#184f81" // This is an orange looking color
         },
         secondary: {
-            main: "#f61067" //Another orange-ish color
+            main: "#ff4c71" //Another orange-ish color
         }
     }
 });

@@ -46,10 +46,10 @@ const Div = styled.div`
   background: rgb(72, 135, 159);
   background: linear-gradient(
     90deg,
-    rgba(72, 135, 159, 1) 0%,
-    rgba(67, 193, 158, 1) 45%,
-    rgba(67, 197, 158, 1) 55%,
-    rgba(73, 122, 159, 1) 100%
+    #38f9d7 0%,
+    #667eea 45%,
+    #667eea 55%,
+    #38f9d7 100%
   );
 `;
 
@@ -88,16 +88,16 @@ const useStyles = makeStyles({
   root: {
     minWidth: "300px",
     maxWidth: "750px",
-    backgroundColor: "#497A9F",
+    backgroundColor: "#184f81",
     boxShadow: '0 3px 5px 3px rgba(255, 255, 255, 0.3)',
   }
 });
 
 const CustomButton = withStyles((theme) => ({
   root: {
-    border: "2px solid #ffca0a",
+    border: "2px solid #fff",
     marginLeft: "20px",
-    background: 'linear-gradient(45deg, #184f81 30%, #5490bd 90%)',
+    background: 'linear-gradient(45deg, #ff4c71 30%, #fDDEfd 90%)',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
   label: {
@@ -178,7 +178,7 @@ const HomeScreen = (props: any) => {
   const viewContext = useContext(SharedViewStateContext);
 
   useEffect(() => {
-    viewContext.getContainerItems("dcanalyzerblob");
+    viewContext.getContainerItems("documents");
   }, []);
 
   // if (!props.token) {

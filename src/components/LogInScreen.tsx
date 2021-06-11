@@ -7,7 +7,6 @@ import axios from "axios";
 import {AuthURL, BaseURL} from "../constants";
 import logo from "../assets/da-logo-words-vertical-raster.png";
 import schlafenhaseLogo from "../assets/schlafenhase-blue-transparent.png";
-import gitHubIcon from "../assets/github-icon.svg";
 import Swal from "sweetalert2";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {mgr} from "../App"
@@ -18,7 +17,7 @@ const Div = styled.div`
   height: 100%;
   display: flex;
   background-size: contain;
-  background: linear-gradient(308deg, #DE0DAF, #0DDEDB, #460DDE , #0DDE4D);
+  background: linear-gradient(310deg, #ff4c71, #fDDEDB, #fDDEfd , #f14f76);
   background-size: 800% 800%;
 
   -webkit-animation: AnimatedGradientBackground 8s ease infinite;
@@ -59,8 +58,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  h1 {
-    color: #460DDE;
+  h2 {
+    color: #ff4c71;
   }
 
   input {
@@ -97,7 +96,7 @@ const BottomLabel = styled.div`
 `;
 
 const HBar = styled.div`
-  background-color: #460DDE;
+  background-color: #ff4c71;
   width: 100%;
   height: 10px;
   margin-top: 20px;
@@ -112,7 +111,7 @@ const SchlafenhaseLogo = styled.img`
 
 const CustomButton = withStyles((theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #184f81 30%, #5490bd 90%)',
+    background: 'linear-gradient(45deg, #ff4c71 30%, #fDDEDB 90%)',
     boxShadow: '0 3px 5px 2px rgba(30, 30, 30, .3)',
   },
   label: {

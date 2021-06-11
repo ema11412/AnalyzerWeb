@@ -44,7 +44,7 @@ const HeaderButton = styled.button`
 
 const SignOutButton = styled.button`
   background-color: #184f81;
-  border: 2px solid #f61067;
+  border: 2px solid #ff4c71;
   padding: 0 10px;
   color: white;
   font-weight: bold;
