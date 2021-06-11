@@ -20,6 +20,7 @@ import {DataGrid, GridColumns} from "@material-ui/data-grid";
 import {UserManager} from "oidc-client";
 import {mgr} from "../App";
 
+
 const DATA = [
   {
     "Nombre del archivo": "Doc1",
@@ -146,11 +147,7 @@ const HomeScreen = (props: any) => {
   }, [props.token]);
 
   const getDetail = async (file: any) => {
-    const response = await axios.get(BaseURL + "/Api/Mongo/" + file.id, {
-      headers: {
-        Authorization: "Bearer " + props.token,
-      },
-    });
+    const response = await axios.get(BaseURL + "/Api/Mongo/" + file.id, {});
     const dataFile = Object.keys(response.data.employees).map((key) => ({
       name: key,
       count: response.data.employees[key],
@@ -160,16 +157,11 @@ const HomeScreen = (props: any) => {
 
   const uploadFile = async (name: String) => {
     setStatus("Processing File with NLP...");
-    const response = await axios.post(
-      BaseURL + "/Api/NLP",
-      { name },
-      {
-        headers: {
-          Authorization: "Bearer " + props.token,
-        },
-      }
-    );
-    console.log(response.data);
+    // const response = await axios.post(
+    //   BaseURL + "/Api/NLP",
+    //   { name },
+    // );
+    //console.log(response.data);
     setStatus("Processing Complete");
     setTimeout(getFiles, 1000);
     setTimeout(setStatus, 2000);

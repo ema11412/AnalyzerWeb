@@ -81,8 +81,8 @@ const Dropzone: any = (props: any) => {
         <div className="container">
             <Container {...getRootProps({isDragActive, isDragAccept, isDragReject})}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
-                <p>Supported formats: .pdf, .txt & .docx</p>
+                <p>Drag one file here, or click to select file</p>
+                <p>Formats: pdf, txt & docx</p>
             </Container>
         </div>
     );

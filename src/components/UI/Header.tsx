@@ -32,8 +32,8 @@ const useStyles = makeStyles({
 });
 
 const navLinks = [
-    { title: `Files`, path: `/home` },
-    { title: `Employees`, path: `/usernames` },
+    { title: `Home`, path: `/home` },
+    //{ title: `Employees`, path: `/usernames` },
 ];
 
 const SignOutListItem = withStyles((theme) => ({

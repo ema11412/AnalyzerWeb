@@ -51,27 +51,7 @@ const App = () => {
     }
   });
 
-  const checkToken = async () => {
-    const savedToken = localStorage.getItem("token");
-    if (savedToken) {
-      const response = await axios.get(BaseURL + "/Api/Employee/Employees", {
-        headers: {
-          Authorization: "Bearer " + savedToken,
-        },
-      });
-      if (response.data) {
-        setToken(savedToken);
-        return;
-      }
-    }
-    else {
-    }
-    history.push("/");
-  };
 
-  useEffect(() => {
-    checkToken();
-  }, []);
 
   return (
     <div className="App">
