@@ -4,6 +4,9 @@ import axios from "axios";
 export const BaseURL = "https://localhost:44328";
 export const AuthURL = "http://localhost:8081";
 
+export const keyBlob = "35oiYj9BMx99zwV+Wk4nAlnIUlTWLOENmnfGYp7Gij/QrTc4lXjTEPYjdEZsK49HUmVceLSdEiDcWl8sEJoEyA=="
+export const nameContainer = "documentanalyzer2"
+
 export const checkToken =  async () => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {

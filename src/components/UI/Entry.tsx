@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const StyledEntry = styled.input`
   background-color: #d5d5d5;
-  border: 1.5px solid #f61067;
+  border: 1.5px solid #ff4c71;
   border-radius: 2px;
   padding: 0 10px;
-  color: #f61067;
+  color: #ff4c71;
   font-weight: bold;
   font-size: 12pt;
   height: 30px;

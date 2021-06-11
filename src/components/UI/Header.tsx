@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import {makeStyles, withStyles} from "@material-ui/core/styles";
 import {useState} from "react";
-import logo from "../../assets/da-logo.svg";
+import logo from "../../assets/da-logo2.svg";
 import styled from "styled-components";
 import {mgr} from "../../App";
 import {log} from "util";
@@ -38,7 +38,7 @@ const navLinks = [
 
 const SignOutListItem = withStyles((theme) => ({
     root: {
-        border: "2px solid #f61067",
+        border: "2px solid #ff4c71",
         "&$selected": {
             backgroundColor: "green",
             color: "white",
@@ -115,11 +115,7 @@ const Header = (props: any) => {
                                 <ListItemText primary="Sign Out" />
                             </SignOutListItem>
                         </a>
-                        <a key={"Sign In"} className={classes.linkText} onClick={() => signIn()}>
-                            <SignOutListItem button>
-                                <ListItemText primary="Sign In" />
-                            </SignOutListItem>
-                        </a>
+
                     </List>
                 </Container>
             </Toolbar>
