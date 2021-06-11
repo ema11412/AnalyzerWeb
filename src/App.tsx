@@ -10,6 +10,7 @@ import {
 import LogInScreen from "./components/LogInScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserNamesScreen from "./components/UserNamesScreen";
+import Callback from "./components/Callback";
 import axios from "axios";
 import { BaseURL } from "./constants";
 import Header from "./components/UI/Header";
@@ -27,9 +28,9 @@ const App = () => {
     authority: "http://identity-server:5000",
     client_id: "mvc",
     client_secret: "secret",
-    redirect_uri: "http://localhost:3000/index.html",
+    redirect_uri: "http://localhost:3000/home",
     response_type: "code",
-    scope: "api1",
+    scope: "openid api1",
     post_logout_redirect_uri: "http://localhost:3000/index.html",
     metadata: {
       authorization_endpoint : "http://localhost:5000/connect/authorize",
@@ -40,12 +41,13 @@ const App = () => {
   };
   mgr = new UserManager(config);
 
-  mgr.getUser().then(function (user) {
+  mgr.getUser().then( (user) => {
     if (user) {
-      log("User logged in" + user.profile);
+      console.log("User logged in" + user.profile);
     }
     else {
-      log("User not logged in");
+      console.log("User not logged in");
+      mgr.signinRedirectCallback();
     }
   });
 
@@ -87,6 +89,11 @@ const App = () => {
             <Header />
             {/*<HeaderBar setToken={setToken} />*/}
             <UserNamesScreen  />
+          </Route>
+          <Route path="/callback">
+            <Header />
+            {/*<HeaderBar setToken={setToken} />*/}
+            <Callback />
           </Route>
           <Redirect to="/" exact />
         </Switch>

@@ -186,7 +186,9 @@ const LogInScreen = (props: any) => {
   };
 
   function signIn() {
-    mgr.signinRedirect();
+    mgr.signinRedirect().then((value) => {
+      console.log(value);
+    });
   }
 
   return (

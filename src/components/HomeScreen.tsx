@@ -17,6 +17,8 @@ import EmployeeResultsTable from "./UI/EmployeeResultsTable";
 import RefreshIcon from "@material-ui/icons/Refresh";
 import {makeStyles, withStyles} from "@material-ui/core/styles";
 import {DataGrid, GridColumns} from "@material-ui/data-grid";
+import {UserManager} from "oidc-client";
+import {mgr} from "../App";
 
 const DATA = [
   {
@@ -123,6 +125,12 @@ const HomeScreen = (props: any) => {
   const [fileData, setDataFile]: any = useState({});
   const [status, setStatus]: any = useState();
   const classes = useStyles();
+
+  mgr.signinRedirectCallback().then(function() {
+    window.location.href = "index.html";
+  }).catch(function(e) {
+    console.error(e);
+  });
 
   const getFiles = async () => {
     const response = await axios.get(BaseURL + "/Api/File/Files", {
