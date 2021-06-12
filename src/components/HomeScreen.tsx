@@ -127,18 +127,9 @@ const HomeScreen = (props: any) => {
   const [status, setStatus]: any = useState();
   const classes = useStyles();
 
-  mgr.signinRedirectCallback().then(function() {
-    window.location.href = "index.html";
-  }).catch(function(e) {
-    console.error(e);
-  });
-
   const getFiles = async () => {
-    const response = await axios.get(BaseURL + "/Api/File/Files", {
-      headers: {
-        Authorization: "Bearer " + props.token,
-      },
-    });
+    const response = await axios.get(BaseURL + "/processed-file"
+    );
     setData(response.data.files);
   };
 
@@ -147,7 +138,7 @@ const HomeScreen = (props: any) => {
   }, [props.token]);
 
   const getDetail = async (file: any) => {
-    const response = await axios.get(BaseURL + "/Api/Mongo/" + file.id, {});
+    const response = await axios.get(BaseURL + "/processed-file/", {params: { fileName: file.id }});
     const dataFile = Object.keys(response.data.employees).map((key) => ({
       name: key,
       count: response.data.employees[key],
@@ -157,11 +148,12 @@ const HomeScreen = (props: any) => {
 
   const uploadFile = async (name: String) => {
     setStatus("Processing File with NLP...");
-    // const response = await axios.post(
-    //   BaseURL + "/Api/NLP",
-    //   { name },
-    // );
-    //console.log(response.data);
+    const response = await axios.post(
+       BaseURL + "/processed-file/",
+        null,
+       { params: { fileID: name } },
+     );
+    console.log(response.data);
     setStatus("Processing Complete");
     setTimeout(getFiles, 1000);
     setTimeout(setStatus, 2000);

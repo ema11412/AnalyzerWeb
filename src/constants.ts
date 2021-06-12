@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // export const BaseURL = "http://35ef82d08f1e.ngrok.io/DocAnalyzerApi";
-export const BaseURL = "http://localhost:27017";
+export const BaseURL = "http://localhost:3010";
 export const AuthURL = "http://localhost:8081";
 
 export const keyBlob = "35oiYj9BMx99zwV+Wk4nAlnIUlTWLOENmnfGYp7Gij/QrTc4lXjTEPYjdEZsK49HUmVceLSdEiDcWl8sEJoEyA=="
